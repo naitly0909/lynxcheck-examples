@@ -4,6 +4,7 @@ Copy-paste examples that check a token for known red flags before your bot swaps
 
 | Folder | For | Tested with |
 |---|---|---|
+| [`agent-rules/`](agent-rules/README.md) | Any AI agent that can trade: remote MCP plus rules for the system prompt | Official MCP Python client |
 | [`python/`](python/lynx_gate.py) | Any Python bot, no dependencies | Python 3.14 |
 | [`typescript/`](typescript/lynxGate.ts) | Any Node 18+ bot, no dependencies | Node 22 |
 | [`langchain/`](langchain/lynx_tool.py) | LangChain tool | langchain-core 1.7.6 |
