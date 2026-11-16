@@ -10,6 +10,7 @@ Copy-paste examples that check a token for known red flags before your bot swaps
 | [`langchain/`](langchain/lynx_tool.py) | LangChain tool | langchain-core 1.7.6 |
 | [`solana-agent-kit/`](solana-agent-kit/lynxPlugin.ts) | Solana Agent Kit plugin | solana-agent-kit 2.0.10, zod 3 |
 | [`elizaos/`](elizaos/lynxPlugin.ts) | elizaOS plugin | @elizaos/core 1.7.2 |
+| [`journal/`](journal/journal_mcp.py) | Your own trade journal through the remote MCP server: summary and a token card, read with your account key | Python 3.14, no dependencies |
 
 ## Quick start
 
@@ -39,6 +40,10 @@ curl -s https://mintsieve.141-95-95-56.sslip.io/v1/batch -H 'Content-Type: appli
 | `NOT_CHECKED` | false | The check failed: network, rate limit or bad input. Added by these examples, not by the API. |
 
 Every example fails closed: an error blocks the trade. Change that only if you have thought about what happens when the API is down.
+
+## Your own journal in an agent
+
+The journal is the trades of the wallets you added in the LynxCheck Telegram bot (`/journal <address>`) or on the website. Three remote MCP tools read it: `journal_summary`, `journal_token` (one token from the first buy to the last sell) and `journal_trades`. The account key names the journal: in the bot open `/journal` and tap "Key for agents", then send it as the `X-API-Key` header. The key only reads. [`journal/journal_mcp.py`](journal/journal_mcp.py) prints a summary and a token card from the command line.
 
 ## Limits
 
